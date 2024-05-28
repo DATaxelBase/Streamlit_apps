@@ -29,7 +29,6 @@ with col2:
         date = st.date_input("Pick a date",disabled = False)
         st.write('Date :',date.year, date.month, date.day)
         url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(date.year)+"&mm="+str(date.month)+"&dd="+str(date.day)
-        st.write(requests.get(url))
         
 
     elif option == "On month and year":
@@ -37,12 +36,15 @@ with col2:
         year = st.number_input("Insert the year")
         st.write('Month :',int(month),'\t Year:', int(year))
         url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(year)+"&amp;mm="+str(month)
-        st.write(requests.get(url))
-
+        
     else:
         year_only = st.number_input("Insert the year")
         st.write('Year :',year_only)
         url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(year_only)
-        st.write(requests.get(url))
-        
+
+st.button("Query website", type="secondary")
+if st.button("Query website"):
+    st.write(requests.get(url))
+else:
+    st.write("Test website")
   
