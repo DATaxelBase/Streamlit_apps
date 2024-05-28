@@ -13,3 +13,4 @@ Hello *world!*
 """)
 date = st.date_input("Pick a date")
 print(date)
+st.write('Date :',d)
