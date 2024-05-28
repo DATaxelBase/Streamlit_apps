@@ -3,6 +3,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import requests
+from datetime import datetime
 import re
 import time
 from bs4 import BeautifulSoup as bf
@@ -12,5 +13,6 @@ st.write("""
 Hello *world!*
 """)
 date = st.date_input("Pick a date")
-print(date)
-st.write('Date :',d)
+#print(date)
+#dt = datetime.strptime(datestring, '%Y-%m-%d %H:%M:%S')
+st.write('Date :',date)
