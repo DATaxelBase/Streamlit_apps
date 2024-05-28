@@ -44,14 +44,14 @@ with col2:
         year = st.number_input("Insert the year")
         st.write('Month :',int(month),'\t Year:', int(year))
         if month < 10:
-            url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(year)+"&amp;mm="+'0'+str(month)
+            url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(int(year))+"&amp;mm="+'0'+str(int(month))
         else:
-            url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(year)+"&amp;mm="+str(month)
+            url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(int(year))+"&amp;mm="+str(int(month))
         
     else:
         year_only = st.number_input("Insert the year")
         st.write('Year :',year_only)
-        url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(year_only)
+        url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(int(year_only))
 
 req =st.button("Query website", type="secondary")
 if req:
