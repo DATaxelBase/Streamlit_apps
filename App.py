@@ -22,8 +22,8 @@ col1, col2 = st.columns(2)
 
 with col1:
     option = st.selectbox(index = None,key = st.session_state.visibility,
-    "What news period want you to scrap?",
-    ("On date setting", "On month and year", "On year"))
+    label = "What news period want you to scrap?",placeholder="Choose an option",
+    options =("On date setting", "On month and year", "On year"))
     
 
 
