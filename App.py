@@ -14,5 +14,4 @@ Hello *world!*
 """)
 date = st.date_input("Pick a date")
 #print(date)
-dt = datetime.strptime(date, '%Y-%m-%d')
-st.write('Date :',dt.year, dt.month, dt.day)
+st.write('Date :',date.year, date.month, date.day)
