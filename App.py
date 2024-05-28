@@ -56,7 +56,7 @@ with col2:
 req =st.button("Query website", type="secondary")
 if req:
     st.write(url)
-    st.write(requests.get('https://www.ndtv.com/sitemap.xml/?yyyy=2024&mm=05&dd=26'))
+    st.write(requests.get('url'))
 else:
     st.write("Test website")
   
