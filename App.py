@@ -28,14 +28,25 @@ with col2:
     if option == "On date setting":
         date = st.date_input("Pick a date",disabled = False)
         st.write('Date :',date.year, date.month, date.day)
-        url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(date.year)+"&amp;mm="+str(date.month)+"&amp;dd="+str(date.day)
+        if date.month < 10 and date.day < 10:
+            url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(date.year)+"&amp;mm="+'0'+str(date.month)+"&amp;dd="+'0'+str(date.day)
+        elif date.month > 10 and date.day < 10:
+            url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(date.year)+"&amp;mm="+str(date.month)+"&amp;dd="+'0'+str(date.day)
+        elif date.month < 10 and date.day > 10:
+            url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(date.year)+"&amp;mm="+'0'+str(date.month)+"&amp;dd="+str(date.day)
+        else:
+            url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(date.year)+"&amp;mm="+str(date.month)+"&amp;dd="+str(date.day)
+            
         
 
     elif option == "On month and year":
         month = st.number_input("Insert the month")
         year = st.number_input("Insert the year")
         st.write('Month :',int(month),'\t Year:', int(year))
-        url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(year)+"&amp;mm="+str(month)
+        if month < 10:
+            url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(year)+"&amp;mm="+'0'+str(month)
+        else:
+            url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(year)+"&amp;mm="+str(month)
         
     else:
         year_only = st.number_input("Insert the year")
