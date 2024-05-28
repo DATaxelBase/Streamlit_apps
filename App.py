@@ -56,7 +56,7 @@ with col2:
 req =st.button("Query website", type="secondary")
 if req:
     st.write(url)
-    st.write(requests.get('url'))
+    st.write(requests.get(url))
 else:
     st.write("Test website")
   
