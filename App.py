@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup as bf
 
 st.write("""
 # News Scraper
-Hello, let's scrape your sitemap
+Hello, let's scrape your sitemap.
 """)
 
 
@@ -28,13 +28,21 @@ with col2:
     if option == "On date setting":
         date = st.date_input("Pick a date",disabled = False)
         st.write('Date :',date.year, date.month, date.day)
+        url = "https://www.ndtv.com/sitemap.xml/?yyyy="+date.year+"&mm="+date.month+"&dd="date.day
+        st.write(request.get(url))
         
 
     elif option == "On month and year":
         month = st.number_input("Insert the month")
         year = st.number_input("Insert the year")
         st.write('Month :',int(month),'\t Year:', int(year))
+        url = "https://www.ndtv.com/sitemap.xml/?yyyy="+year+"&amp;mm"+month
+        st.write(request.get(url))
+
     else:
         year_only = st.number_input("Insert the year")
         st.write('Year :',year_only)
+        url = "https://www.ndtv.com/sitemap.xml/?yyyy="+year_only
+        st.write(request.get(url))
+        
   
