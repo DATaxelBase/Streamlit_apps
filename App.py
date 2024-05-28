@@ -24,7 +24,7 @@ with col1:
 
 
 with col2:
-    yyyy=2024&mm=05&dd=26
+    
     if option == "On date setting":
         date = st.date_input("Pick a date",disabled = False)
         st.write('Date :',date.year, date.month, date.day)
