@@ -42,8 +42,8 @@ with col2:
         st.write('Year :',year_only)
         url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(year_only)
 
-st.button("Query website", type="secondary")
-if st.button("Query website"):
+req =st.button("Query website", type="secondary")
+if req:
     st.write(requests.get(url))
 else:
     st.write("Test website")
