@@ -25,7 +25,7 @@ with col1:
 
 with col2:
     
-    if option == "Full date seting":
+    if option == "On date setting":
         date = st.date_input("Pick a date",disabled = False)
         st.write('Date :',date.year, date.month, date.day)
         
