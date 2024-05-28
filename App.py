@@ -28,7 +28,7 @@ with col2:
     if option == "On date setting":
         date = st.date_input("Pick a date",disabled = False)
         st.write('Date :',date.year, date.month, date.day)
-        url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(date.year)+"&mm="+str(date.month)+"&dd="+str(date.day)
+        url = "https://www.ndtv.com/sitemap.xml/?yyyy="+str(date.year)+"&amp;mm="+str(date.month)+"&amp;dd="+str(date.day)
         
 
     elif option == "On month and year":
