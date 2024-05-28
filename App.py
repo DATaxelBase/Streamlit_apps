@@ -13,10 +13,6 @@ st.write("""
 Hello, let's scrape your sitemap
 """)
 
-# Store the initial value of widgets in session state
-if "visibility" not in st.session_state:
-    st.session_state.visibility = "visible"
-    st.session_state.disabled = False
 
 col1, col2 = st.columns(2)
 
@@ -29,22 +25,22 @@ with col1:
 
 with col2:
     if option == "Full date seting":
-        date = st.date_input("Pick a date",key ="visibility")
+        date = st.date_input("Pick a date",disabled = False)
         st.write('Date :',date.year, date.month, date.day)
-        month = st.number_input("Insert the month",key =st.session_state.disabled)
-        year = st.number_input("Insert the year",key =st.session_state.disabled)
-        year_only = st.number_input("Insert the year",st.session_state.disabled)
+        month = st.number_input("Insert the month",disabled = True)
+        year = st.number_input("Insert the year",disabled = True)
+        year_only = st.number_input("Insert the year",disabled = True)
 
     elif option == "On month and year":
-        date = st.date_input("Pick a date",key =st.session_state.disabled)
-        month = st.number_input("Insert the month",key =st.session_state.visibility)
-        year = st.number_input("Insert the year",key =st.session_state.visibility)
-        year_only = st.number_input("Insert the year",st.session_state.disabled)
+        date = st.date_input("Pick a date",disabled = True)
+        month = st.number_input("Insert the month",disabled = False)
+        year = st.number_input("Insert the year",disabled = False)
+        year_only = st.number_input("Insert the year",disabled = True)
         st.write('Month :',int(month),'\t Year:', int(year))
     else:
-        date = st.date_input("Pick a date",key =st.session_state.disabled)
-        month = st.number_input("Insert the month",key =st.session_state.disabled)
-        year = st.number_input("Insert the year",key =st.session_state.disabled)
-        year_only = st.number_input("Insert the year",st.session_state.visibility)
+        date = st.date_input("Pick a date",disabled = True)
+        month = st.number_input("Insert the month",disabled = True)
+        year = st.number_input("Insert the year",disabled = True)
+        year_only = st.number_input("Insert the year",disabled = False)
         st.write('Year :',year_only)
   
